@@ -75,24 +75,46 @@
                                             <td><?php echo $bio->address; ?></td>
                                             <td><?php echo $bio->nationality; ?></td>
                                             <td>
-                                                <a class="btn btn-info" href="<?php echo site_url('admin/biodata/edit/'.$bio->id) ?>">
-                                                <i class="fa fa-edit"></i> Edit</a> &nbsp
-                                                <a class="btn btn-danger" href="<?php echo site_url('admin/biodata/delete/'.$bio->id) ?>">
-                                                <i class="fa fa-trash"></i> Hapus</a>
+                                                <a href="<?php echo site_url('admin/biodata/edit/'.$bio->id) ?>"><button type="button" class="btn btn-warning">Edit</button></a>
+
+                                                <a href="<?php echo site_url('admin/biodata/delete/'.$bio->id) ?>"> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticModal">Delete</button></button></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
+                            
                             <?php
                                 $this->load->view('admin/_partials/footer.php');
                             ?>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" data-backdrop="static" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog modal-sm" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Static Modal</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                This is a static modal, backdrop click will not close it.
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-primary">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
         <!-- END MAIN CONTENT-->
     </div>
     <!-- END PAGE CONTAINER-->
