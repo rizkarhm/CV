@@ -130,7 +130,7 @@ class Biodata_model extends CI_Model{
         $config['allowed_types']        = 'gif|jpg|png';
         $config['file_name']            = $this->id;
         $config['overwrite']			= true;
-        $config['max_size']             = 1024; // 1MB
+        //$config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
 		// $config['max_height']           = 768;
 		

@@ -166,6 +166,19 @@
                                                     <?php echo form_error('nationality') ?>
                                                 </div>
                                             </div>
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="photo" class=" form-control-label">Photo</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="file-input" name="file-input" class="form-control-file <?php echo form_error('photo') ? 'is-invalid':'' ?>">
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    <?php echo form_error('photo') ?>
+                                                </div>
+                                            </div>
+                                            
                                             <div class="card-footer">
                                                 <button type="submit" class="btn btn-primary btn-sm">
                                                     <i class="fa fa-dot-circle-o"></i> Submit
