@@ -57,9 +57,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                     <?php foreach ($portofolio as $portofolio): ?>
+                                     <?php $no=1; foreach ($portofolio as $portofolio): ?>
                                         <tr>
-                                            <td><?php echo $portofolio->id; ?></td>
+                                            <td><?php echo $no; ?>.</td>
                                             <td><?php echo $portofolio->name; ?></td>
                                             <td><?php echo $portofolio->type; ?></td>
                                             <td><?php echo $portofolio->about; ?></td>
@@ -70,7 +70,7 @@
                                                 <i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php $no++; endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

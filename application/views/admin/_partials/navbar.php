@@ -129,7 +129,7 @@
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
                             <div class="image">
-                                <img src="<?= base_url('back/images/icon/avatar-02');?>" alt="Rizka Nur Rahma" />
+                                <img src="<?= base_url('back/images/icon/avatar02.jpg');?>" alt="Rizka Nur Rahma" />
                             </div>
                             <div class="content">
                                 <a class="js-acc-btn" href="#">Rizka Nur Rahma</a>
@@ -138,7 +138,7 @@
                                 <div class="info clearfix">
                                     <div class="image">
                                         <a href="#">
-                                            <img src="<?= base_url('back/images/icon/avatar-02');?>" alt="Rizka Nur Rahma" />
+                                            <img src="<?= base_url('back/images/icon/avatar02.jpg');?>" alt="Rizka Nur Rahma" />
                                         </a>
                                     </div>
                                     <div class="content">

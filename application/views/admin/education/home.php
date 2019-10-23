@@ -58,9 +58,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                     <?php foreach ($education as $edu): ?>
+                                     <?php $no=1; foreach ($education as $edu): ?>
                                         <tr>
-                                            <td>1.</td>
+                                            <td><?php echo $no; ?>.</td>
                                             <td><?php echo $edu->name; ?></td>
                                             <td><?php echo $edu->year; ?></td>
                                             <td><?php echo $edu->type; ?></td>
@@ -72,7 +72,7 @@
                                                 <i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php $no++; endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

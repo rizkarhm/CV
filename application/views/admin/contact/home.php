@@ -56,9 +56,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                     <?php foreach ($contact as $contact): ?>
+                                     <?php $no=1; foreach ($contact as $contact): ?>
                                         <tr>
-                                            <td><?php echo $contact->id; ?>.</td>
+                                            <td><?php echo $no; ?>.</td>
                                             <td><?php echo $contact->name; ?></td>
                                             <td><?php echo $contact->link; ?></td>
                                             <td>
@@ -68,7 +68,7 @@
                                                 <i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php $no++; endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

@@ -58,9 +58,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                     <?php foreach ($experience as $ex): ?>
+                                     <?php $no=1; foreach ($experience as $ex): ?>
                                         <tr>
-                                            <td><?php echo $ex->id; ?>.</td>
+                                            <td><?php echo $no; ?>.</td>
                                             <td><?php echo $ex->name; ?></td>
                                             <td><?php echo $ex->type; ?></td>
                                             <td><?php echo $ex->year; ?></td>
@@ -72,7 +72,7 @@
                                                 <i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php $no++; endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

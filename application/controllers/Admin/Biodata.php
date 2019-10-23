@@ -20,7 +20,7 @@ class Biodata extends CI_Controller {
         $biodata = $this->biodata_model;
         $validation = $this->form_validation;
         $validation->set_rules($biodata->rules());
-        var_dump($validation->run());
+        //var_dump($validation->run());
 
         if ($validation->run()) {
             $biodata->add();

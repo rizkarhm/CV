@@ -57,9 +57,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                     <?php foreach ($skills as $skills): ?>
+                                     <?php $no=1; foreach ($skills as $skills): ?>
                                         <tr>
-                                            <td>1.</td>
+                                            <td><?php echo $no; ?>.</td>
                                             <td><?php echo $skills->name; ?></td>
                                             <td><?php echo $skills->percentage; ?>%</td>
                                             <td><?php echo $skills->about; ?></td>
@@ -70,7 +70,7 @@
                                                 <i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php $no++; endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
