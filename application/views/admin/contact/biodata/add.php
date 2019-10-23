@@ -32,23 +32,27 @@
         <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
+                        <?php if ($this->session->flashdata('success')): ?>
+                            <div class="alert alert-success" role="alert">
+                                <?php echo $this->session->flashdata('success'); ?>
+                            </div>
+                        <?php endif; ?>
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Edit</strong> Biodata
+                                        <strong>Add</strong> Biodata
                                     </div>
                                     <div class="card-body card-block">
-                                        <form action="<?= base_url('admin/biodata/edit'); ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
-
-                                            <input type="hidden" name="id" value="<?php echo $biodata['id'] ?>"/>
+                                        <form action="<?= base_url('admin/biodata/add') ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
 
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Name</label>
+                                                    <label for="name" class="form-control-label">Name</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="name" placeholder="Full Name" class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>" value="<?php echo $biodata['name'] ?>" >
+                                                    <input type="text" id="text-input" name="name" placeholder="Full Name" class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>" >
                                                 </div>
                                                 <div class="invalid-feedback">
                                                     <?php echo form_error('name') ?>
@@ -60,7 +64,7 @@
                                                     <label for="nick_name" class=" form-control-label">Nick Name</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="nick_name" placeholder="Nick Name" class="form-control <?php echo form_error('nick_name') ? 'is-invalid':'' ?>" value="<?php echo $biodata['nick_name'] ?>" >
+                                                    <input type="text" id="text-input" name="nick_name" placeholder="Nick Name" class="form-control <?php echo form_error('nick_name') ? 'is-invalid':'' ?>" >
                                                 </div>
                                                 <div class="invalid-feedback">
                                                     <?php echo form_error('nick_name') ?>
@@ -72,7 +76,7 @@
                                                     <label for="place" class=" form-control-label">Place</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="place" placeholder="Place" class="form-control <?php echo form_error('place') ? 'is-invalid':'' ?>" value="<?php echo $biodata['place'] ?>" >
+                                                    <input type="text" id="text-input" name="place" placeholder="Place" class="form-control <?php echo form_error('place') ? 'is-invalid':'' ?>" >
                                                 </div>
                                                 <div class="invalid-feedback">
                                                     <?php echo form_error('place') ?>
@@ -84,7 +88,7 @@
                                                     <label for="date" class=" form-control-label">Date</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="date" id="text-input" name="date" placeholder="Date" class="form-control <?php echo form_error('date') ? 'is-invalid':'' ?>" value="<?php echo $biodata['date'] ?>" data-inputmask="'alias': 'dd-mm-yyyy'" data-mask>
+                                                    <input type="date" id="text-input" name="date" placeholder="Date" class="form-control <?php echo form_error('date') ? 'is-invalid':'' ?>">
                                                 </div>
                                                 <div class="invalid-feedback">
                                                     <?php echo form_error('date') ?>
@@ -96,7 +100,7 @@
                                                     <label for="job" class=" form-control-label">Job</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="job" placeholder="Job" class="form-control <?php echo form_error('job') ? 'is-invalid':'' ?>" value="<?php echo $biodata['job'] ?>" >
+                                                    <input type="text" id="text-input" name="job" placeholder="Job" class="form-control <?php echo form_error('job') ? 'is-invalid':'' ?>" >
                                                 </div>
                                                 <div class="invalid-feedback">
                                                     <?php echo form_error('job') ?>
@@ -105,25 +109,25 @@
 
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="email" class=" form-control-label">Email Input</label>
+                                                    <label for="phone" class="form-control-label">Phone</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="email" id="email-input" name="email" placeholder="Email" class="form-control <?php echo form_error('email') ? 'is-invalid':'' ?>" value="<?php echo $biodata['email'] ?>" >
+                                                    <input type="phone" name="phone" placeholder="Phone" class="form-control <?php echo form_error('phone') ? 'is-invalid':'' ?>" >
                                                 </div>
                                                 <div class="invalid-feedback">
-                                                    <?php echo form_error('email') ?>
+                                                    <?php echo form_error('phone') ?>
                                                 </div>
                                             </div>
 
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="phone" class=" form-control-label">Phone</label>
+                                                    <label for="email" class=" form-control-label">Email Input</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="email-input" name="phone" placeholder="phone" class="form-control <?php echo form_error('phone') ? 'is-invalid':'' ?>" value="<?php echo $biodata['phone'] ?>" >
+                                                    <input type="email" id="email-input" name="email" placeholder="Email" class="form-control <?php echo form_error('email') ? 'is-invalid':'' ?>" >
                                                 </div>
                                                 <div class="invalid-feedback">
-                                                    <?php echo form_error('phone') ?>
+                                                    <?php echo form_error('email') ?>
                                                 </div>
                                             </div>
                                             
@@ -132,7 +136,7 @@
                                                     <label for="address" class=" form-control-label">Address</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input name="address" id="textarea-input" rows="9" placeholder="Address" class="form-control <?php echo form_error('address') ? 'is-invalid':'' ?>" value="<?php echo $biodata['address'] ?>">
+                                                    <input name="address" id="textarea-input" placeholder="Address" class="form-control <?php echo form_error('address') ? 'is-invalid':'' ?>">
                                                 </div>
                                                 <div class="invalid-feedback">
                                                     <?php echo form_error('address') ?>
@@ -144,7 +148,7 @@
                                                     <label for="gender" class=" form-control-label">Gender</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input name="gender" id="textarea-input" placeholder="Gender" class="form-control <?php echo form_error('gender') ? 'is-invalid':'' ?>" value="<?php echo $biodata['gender'] ?>">
+                                                    <input name="gender" id="textarea-input"  placeholder="Gender" class="form-control <?php echo form_error('gender') ? 'is-invalid':'' ?>">
                                                 </div>
                                                 <div class="invalid-feedback">
                                                     <?php echo form_error('gender') ?>
@@ -156,25 +160,12 @@
                                                     <label for="nationality" class=" form-control-label">Nationality</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input name="nationality" id="textarea-input" rows="9" placeholder="Nationality" class="form-control <?php echo form_error('nationality') ? 'is-invalid':'' ?>" value="<?php echo $biodata['nationality'] ?>">
+                                                    <input name="nationality" id="textarea-input" placeholder="Nationality" class="form-control <?php echo form_error('nationality') ? 'is-invalid':'' ?>">
                                                 </div>
                                                 <div class="invalid-feedback">
                                                     <?php echo form_error('nationality') ?>
                                                 </div>
                                             </div>
-
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="photo" class=" form-control-label">Photo</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="file" id="file-input" name="photo  " class="form-control-file <?php echo form_error('photo') ? 'is-invalid':'' ?>" value="<?php echo $biodata['photo'] ?>">
-                                                </div>
-                                                <div class="invalid-feedback">
-                                                    <?php echo form_error('photo') ?>
-                                                </div>
-                                            </div>
-
                                             <div class="card-footer">
                                                 <button type="submit" class="btn btn-primary btn-sm">
                                                     <i class="fa fa-dot-circle-o"></i> Submit

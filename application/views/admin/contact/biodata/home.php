@@ -42,7 +42,6 @@
                         </div>
                     </div>
 
-                   
                     <div class="row m-t-30">
                         <div class="col-md-12">
                             <!-- DATA TABLE-->
@@ -53,7 +52,6 @@
                                             <th>ID</th>
                                             <th>Fullname</th>
                                             <th>Nickname</th>
-                                            <th>Photo</th>
                                             <th>Birth</th>
                                             <th>Gender</th>
                                             <th>Job</th>
@@ -65,14 +63,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    
-                                    
-                                    <?php $no=1; foreach ($biodata as $bio): ?>
+                                     <?php foreach ($biodata as $bio): ?>
                                         <tr>
-                                            <td><?php echo $no ?>.</td>
+                                            <td><?php echo $bio->id; ?>.</td>
                                             <td><?php echo $bio->name; ?></td>
                                             <td><?php echo $bio->nick_name; ?></td>
-                                            <td><img src="<?php echo base_url('assets/images/photo_profile/') . $bio->photo; ?>" /></td>
                                             <td><?php echo $bio->place; ?>, <?php echo $bio->date; ?></td>      <td><?php echo $bio->gender; ?></td>
                                             <td><?php echo $bio->job; ?></td>
                                             <td><?php echo $bio->phone; ?></td>
@@ -84,10 +79,8 @@
 
                                                 <a href="<?php echo site_url('admin/biodata/delete/'.$bio->id) ?>"> <button type="button" class="btn btn-danger">Delete</button></a>
                                             </td>
-                                        
                                         </tr>
-                                        <img href="<?php echo base_url('assets/images/') . $bio->photo; ?>" />
-                                    <?php $no++; endforeach; ?>
+                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

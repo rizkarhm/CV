@@ -25,9 +25,11 @@ class Biodata extends CI_Controller {
         if ($validation->run()) {
             $biodata->add();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+            echo "ghfgh";
 		}
 		
         $this->load->view("admin/biodata/add");
+        //exit();
     }
 
 	public function edit($id = null)

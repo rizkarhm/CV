@@ -112,7 +112,7 @@ class Biodata_model extends CI_Model{
         if (!empty($_FILES["photo"]["name"])) {
             $this->photo = $this->_uploadImage();
         } else {
-            $this->photo = $post["old_image"];
+            $this->photo = $post["photo"];
 		}
 		
         $this->db->update('biodata', $this, array('id' => $post['id'])); //query
@@ -126,8 +126,8 @@ class Biodata_model extends CI_Model{
 	
     private function _uploadImage()
     {
-        $config['upload_path']          = './assets/images/';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['upload_path']          = './assets/images/photo_profile/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['file_name']            = $this->id;
         $config['overwrite']			= true;
         //$config['max_size']             = 1024; // 1MB
