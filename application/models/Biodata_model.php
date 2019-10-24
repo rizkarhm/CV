@@ -126,7 +126,7 @@ class Biodata_model extends CI_Model{
 	
     private function _uploadImage()
     {
-        $config['upload_path']          = './assets/images/photo_profile/';
+        $config['upload_path']          = "<?= base_url('assets/images/photo_profile/')?>";
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['file_name']            = $this->id;
         $config['overwrite']			= true;
