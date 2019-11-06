@@ -168,7 +168,8 @@
                                                     <label for="photo" class=" form-control-label">Photo</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="file" id="file-input" name="photo  " class="form-control-file <?php echo form_error('photo') ? 'is-invalid':'' ?>" value="<?php echo $biodata['photo'] ?>">
+                                                    <input type="hidden" name="old_image" value="<?php echo $biodata['photo'] ?>" />
+                                                    <input type="file" id="photo" name="photo" class="form-control-file <?php echo form_error('photo') ? 'is-invalid':'' ?>">
                                                 </div>
                                                 <div class="invalid-feedback">
                                                     <?php echo form_error('photo') ?>

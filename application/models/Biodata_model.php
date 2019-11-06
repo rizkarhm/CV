@@ -112,7 +112,7 @@ class Biodata_model extends CI_Model{
         if (!empty($_FILES["photo"]["name"])) {
             $this->photo = $this->_uploadImage();
         } else {
-            $this->photo = $post["photo"];
+            $this->photo = $post["old_image"];
 		}
 		
         $this->db->update('biodata', $this, array('id' => $post['id'])); //query
